@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://starwarsserver.onrender.com/forgot-password', { email });
+      const response = await axios.post('https://starwars-frontend.onrender.com/forgot-password', { email });
       setMessage(response.data);
       setTimeout(() => navigate('/signin'), 10000);
 

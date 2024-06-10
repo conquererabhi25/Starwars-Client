@@ -23,7 +23,7 @@ const ResetPassword = () => {
       return;
     }
     try {
-      const response = await axios.post(`https://starwarsserver.onrender.com/reset-password/${token}`, { password: newPassword });
+      const response = await axios.post(`https://starwars-frontend.onrender.com/reset-password/${token}`, { password: newPassword });
       setMessage(response.data);
       if (response.data === "Password has been reset.") {
        // setTimeout(() => navigate('/signin'), 2000); // Redirect to login page after 2 seconds
