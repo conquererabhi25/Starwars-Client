@@ -22,7 +22,7 @@ const ResetPassword = () => {
       alert("Passwords do not match");
       return;
     }
-    const resetPasswordBackendAPi = `https://starwarsserver.onrender.com/${token}`
+    const resetPasswordBackendAPi = `https://starwarsserver.onrender.com/reset-password/${token}`
     try {
       const response = await axios.post(resetPasswordBackendAPi, { password: newPassword });
       setMessage(response.data);
