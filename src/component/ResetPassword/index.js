@@ -22,8 +22,9 @@ const ResetPassword = () => {
       alert("Passwords do not match");
       return;
     }
+    const resetPasswordBackendAPi = `https://starwarsserver.onrender.com/${token}`
     try {
-      const response = await axios.post(`https://starwarsserver.onrender.com/reset-password/${token}`, { password: newPassword });
+      const response = await axios.post(resetPasswordBackendAPi, { password: newPassword });
       setMessage(response.data);
       if (response.data === "Password has been reset.") {
        // setTimeout(() => navigate('/signin'), 2000); // Redirect to login page after 2 seconds

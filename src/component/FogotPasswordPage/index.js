@@ -12,8 +12,9 @@ const ForgotPassword = () => {
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
+    const forgotPasswordBackendAPI = "https://starwarsserver.onrender.com/forgot-password"
     try {
-      const response = await axios.post('https://starwarsserver.onrender.com/forgot-password', { email });
+      const response = await axios.post(forgotPasswordBackendAPI, { email });
       setMessage(response.data);
       setTimeout(() => navigate('/signin'), 10000);
 
